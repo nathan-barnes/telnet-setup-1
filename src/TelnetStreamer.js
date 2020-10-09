@@ -1,6 +1,6 @@
 import Telnet from 'telnet-client'
 
-import { zeaDebug } from '../helpers/zeaDebug.js'
+import { zeaDebug } from './helpers/zeaDebug.js'
 
 import { BaseStreamer } from './BaseStreamer.js'
 

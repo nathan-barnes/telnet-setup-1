@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@zeainc/zea-collab": "^4.1.0",
+    "telnet-client": "^1.4.6"
+  },
+  "devDependencies": {
+    "debug": "^4.2.0",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.2"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "start:debug": "yarn run nodemon --inspect=0.0.0.0 index.js",
+    "start:watch": "yarn run nodemon index.js"
+  },
+  "type": "module"
+}

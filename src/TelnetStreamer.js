@@ -1,0 +1,81 @@
+import Telnet from 'telnet-client'
+
+import { zeaDebug } from '../helpers/zeaDebug.js'
+
+import { BaseStreamer } from './BaseStreamer.js'
+
+class TelnetStreamer extends BaseStreamer {
+  constructor() {
+    super()
+
+    this.#bootstrapTelnetClient()
+  }
+
+  async connect() {
+    const envParams = {
+      host: process.env.ZEA_TELNET_HOST,
+      port: process.env.ZEA_TELNET_PORT,
+    }
+
+    const params = {
+      negotiationMandatory: false,
+      initialCTRLC: true,
+      initialLFCR: true,
+      timeout: 1500,
+      ...envParams,
+    }
+
+    zeaDebug('TelnetStreamer params:\n%O', params)
+
+    await this.telnet.connect(params)
+  }
+
+  async send(data) {
+    super.send(data)
+
+    return this.telnet.send('uptime')
+  }
+
+  #bootstrapTelnetClient() {
+    this.telnet = new Telnet()
+
+    this.telnet.on('connect', () => {
+      zeaDebug('Connected.')
+    })
+
+    this.telnet.on('data', (data) => {
+      const decoded = data.toString('utf8')
+      this.emit('data', data)
+    })
+
+    this.telnet.on('ready', () => {
+      zeaDebug('Ready.')
+    })
+
+    this.telnet.on('writedone', () => {
+      zeaDebug('Writedone.')
+    })
+
+    this.telnet.on('timeout', () => {
+      zeaDebug('Timeout.')
+    })
+
+    this.telnet.on('failedlogin', () => {
+      zeaDebug('Failed login.')
+    })
+
+    this.telnet.on('error', () => {
+      zeaDebug('Error.')
+    })
+
+    this.telnet.on('end', () => {
+      zeaDebug('End.')
+    })
+
+    this.telnet.on('close', () => {
+      zeaDebug('Close.')
+    })
+  }
+}
+
+export { TelnetStreamer }

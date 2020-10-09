@@ -18,6 +18,7 @@ Optional:
 
 ```bash
 export ZEA_STREAMER_TYPE=mock
+export ZEA_STREAMER_TYPE=telnet
 export DEBUG=zea:*
 ```
 

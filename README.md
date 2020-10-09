@@ -9,6 +9,7 @@ yarn install
 Required:
 
 ```bash
+export ZEA_COLLAB_ROOM_ID=foobar
 export ZEA_TELNET_HOST=127.0.0.1
 export ZEA_TELNET_PORT=23
 ```
@@ -17,8 +18,6 @@ Optional:
 
 ```bash
 export DEBUG=zea:*
-
-export ZEA_COLLAB_ROOM_ID=foobar
 
 export ZEA_STREAMER_TYPE=mock
 export ZEA_STREAMER_TYPE=telnet

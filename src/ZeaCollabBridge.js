@@ -36,7 +36,6 @@ class ZeaCollabBridge {
       family_name: 'zea',
       given_name: 'telnet client',
       id: 'zea-telnet-client',
-      picture: 'https://storage.googleapis.com/zea-public-assets/zea-logo.png',
     }
 
     return userData

@@ -33,8 +33,8 @@ class ZeaCollabBridge {
   #getUserData() {
     const userData = {
       color: '#333333',
-      family_name: 'zea',
-      given_name: 'telnet client',
+      family_name: 'Zea',
+      given_name: 'Telnet client',
       id: 'zea-telnet-client',
     }
 

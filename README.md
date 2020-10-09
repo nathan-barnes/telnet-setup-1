@@ -36,7 +36,3 @@ For telnet session with HTTP server:
 ```bash
 GET / HTTP/1.1
 ```
-
-Stream example:
-
-https://gist.github.com/nathan-barnes/13699b66c5e60a4e3e15c57a4286e868

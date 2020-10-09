@@ -24,7 +24,7 @@ class MockStreamer extends BaseStreamer {
       this.emit('data', arrayMockPoints[tick % arrayMockPoints.length])
 
       tick += 1
-    }, 500)
+    }, 1000)
   }
 
   async send(data) {

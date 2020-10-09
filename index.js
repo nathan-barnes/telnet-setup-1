@@ -13,7 +13,7 @@ const streamer = shouldUseMock
       port: process.env.ZEA_TELNET_PORT,
     })
 
-const roomId = process.env.ZEA_COLLAB_ROOM
+const roomId = process.env.ZEA_COLLAB_ROOM || 'surveying-machine'
 
 const zeaCollabBridge = new ZeaCollabBridge(streamer, roomId)
 

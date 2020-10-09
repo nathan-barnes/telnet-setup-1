@@ -11,15 +11,17 @@ Required:
 ```bash
 export ZEA_TELNET_HOST=127.0.0.1
 export ZEA_TELNET_PORT=23
-export ZEA_COLLAB_ROOM=surveying-machine
 ```
 
 Optional:
 
 ```bash
+export DEBUG=zea:*
+
+export ZEA_COLLAB_ROOM=some-random-string
+
 export ZEA_STREAMER_TYPE=mock
 export ZEA_STREAMER_TYPE=telnet
-export DEBUG=zea:*
 ```
 
 ## Running

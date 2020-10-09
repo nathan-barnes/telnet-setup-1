@@ -1,8 +1,6 @@
 import { promises as fs } from 'fs'
 import path from 'path'
 
-import { zeaDebug } from '../helpers/zeaDebug.js'
-
 import { BaseStreamer } from './BaseStreamer.js'
 
 class MockStreamer extends BaseStreamer {

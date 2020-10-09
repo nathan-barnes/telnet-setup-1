@@ -1,5 +1,7 @@
 import { Session } from '@zeainc/zea-collab'
 
+import { zeaDebug } from '../helpers/zeaDebug.js'
+
 class ZeaCollabBridge {
   constructor(streamer, roomId) {
     this.streamer = streamer

@@ -5,10 +5,18 @@ import { zeaDebug } from '../helpers/zeaDebug.js'
 class ZeaCollabBridge {
   constructor(streamer, roomId) {
     this.streamer = streamer
-    this.roomId = roomId
+    this.roomId = roomId || 'surveying-machine'
   }
 
   async start() {
+    const socketUrl = 'https://websocket-staging.zea.live'
+
+    const session = new Session(this.#getUserData(), socketUrl)
+
+    session.joinRoom(this.roomId, {
+      isCollisionProtected: false,
+    })
+
     await this.streamer.connect()
 
     const res = await this.streamer.send('uptime')
@@ -16,8 +24,22 @@ class ZeaCollabBridge {
     console.log('Response:', res)
 
     this.streamer.on('data', (data) => {
-      // zeaDebug('Data:\n%s', data)
+      session.pub('create-point', {
+        point: data,
+      })
     })
+  }
+
+  #getUserData() {
+    const userData = {
+      color: '#333333',
+      family_name: 'zea',
+      given_name: 'telnet client',
+      id: 'zea-telnet-client',
+      picture: 'https://storage.googleapis.com/zea-public-assets/zea-logo.png',
+    }
+
+    return userData
   }
 }
 

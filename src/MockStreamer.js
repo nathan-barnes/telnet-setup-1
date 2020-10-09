@@ -28,8 +28,6 @@ class MockStreamer extends BaseStreamer {
   }
 
   async send(data) {
-    super.send(data)
-
     return 'SENT FROM MOCK'
   }
 }

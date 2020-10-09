@@ -15,8 +15,4 @@ const roomId = process.env.ZEA_COLLAB_ROOM
 
 const zeaCollabBridge = new ZeaCollabBridge(streamer, roomId)
 
-try {
-  await zeaCollabBridge.start()
-} catch (err) {
-  console.error(err)
-}
+await zeaCollabBridge.start()

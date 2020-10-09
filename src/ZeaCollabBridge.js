@@ -21,8 +21,6 @@ class ZeaCollabBridge {
 
     const res = await this.streamer.send('uptime')
 
-    console.log('Response:', res)
-
     this.streamer.on('data', (data) => {
       session.pub('create-point', {
         point: data,

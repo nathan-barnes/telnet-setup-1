@@ -1,5 +1,3 @@
-import { zeaDebug } from './helpers/zeaDebug.js'
-
 import { MockStreamer } from './src/MockStreamer.js'
 import { TelnetStreamer } from './src/TelnetStreamer.js'
 import { ZeaCollabBridge } from './src/ZeaCollabBridge.js'

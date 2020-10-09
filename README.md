@@ -18,7 +18,7 @@ Optional:
 ```bash
 export DEBUG=zea:*
 
-export ZEA_COLLAB_ROOM_ID=some-random-string
+export ZEA_COLLAB_ROOM_ID=foobar
 
 export ZEA_STREAMER_TYPE=mock
 export ZEA_STREAMER_TYPE=telnet

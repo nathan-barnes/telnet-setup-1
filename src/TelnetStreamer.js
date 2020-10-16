@@ -40,7 +40,7 @@ class TelnetStreamer extends BaseStreamer {
 
     this.telnet.on('data', (data) => {
       const decoded = data.toString('utf8')
-      this.emit('data', data)
+      this.emit('data', decoded)
     })
 
     this.telnet.on('ready', () => {
